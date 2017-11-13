@@ -199,7 +199,7 @@ class RRTFamilyPathPlanner():
     def steer(self, from_point, to_point):
         from_point_buffered = Point(from_point).buffer(self.obj_radius, self.resolution)
         to_point_buffered = Point(to_point).buffer(self.obj_radius, self.resolution)
-        if from_point_buffered.difference(to_point_buffered) < self.steer_distance:
+        if from_point_buffered.distance(to_point_buffered) < self.steer_distance:
             return to_point
         else:
             from_x, from_y = from_point
